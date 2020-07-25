@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestHeader;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -28,8 +29,8 @@ public class CamaRecuperacionController{
         return servicio.obtenerDisponibles();
     }
 
-    @GetMapping("/CamaRecup?sala={idsala}&disponible={disponible}")
-    public List<CamaRecuperacion> camasporSala(@PathVariable("idsala") long idSala, @PathVariable("disponible") boolean disponible){
+    @GetMapping("/CamaRecup")
+    public List<CamaRecuperacion> camasporSala(@RequestParam(name = "sala") long idSala, @RequestParam(name = "disponible") boolean disponible){
         return servicio.obtenerCamas(idSala, disponible);
     }
 
