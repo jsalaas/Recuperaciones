@@ -18,17 +18,17 @@ public class SalaRecuperacion{
     @Column(name="camas")
     private int camas;
 
-    @Column(name="especialidad")
-    private String especialidad;
+    /*@Column(name="especialidad")
+    private String especialidad;*/
 
     public SalaRecuperacion(){
 
     }
 
-    public SalaRecuperacion(long id, int camas, String especialidad) {
+    public SalaRecuperacion(long id, int camas/*, String especialidad*/) {
         this.id = id;
         this.camas = camas;
-        this.especialidad = especialidad;
+        /*this.especialidad = especialidad;*/
     }
 
     public long getId(){
@@ -47,11 +47,11 @@ public class SalaRecuperacion{
         this.camas = camas;
     }
 
-    public String getEsp(){
+    /*public String getEsp(){
         return this.especialidad;
     }
 
     public void setEsp(String especialidad){
         this.especialidad = especialidad;
-    }
+    }*/
 }
