@@ -5,14 +5,16 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 
 @Entity
 @Table(name="camarecuperacion")
 public class CamaRecuperacion{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_cama")
     private long id;
-
 
     @Column(name="id_sala")
     private long idSala;

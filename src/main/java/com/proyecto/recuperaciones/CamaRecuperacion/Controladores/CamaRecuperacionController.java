@@ -34,8 +34,13 @@ public class CamaRecuperacionController{
         return servicio.obtenerCamas(idSala, disponible);
     }
 
-    @PutMapping("/CamaRecup/{id}")
-    public boolean actualizarCama(@PathVariable("id") long idCama, @RequestBody CamaRecuperacion cama){
+    @PostMapping("/CamaRecup/Agregar")
+    public boolean agregarCama(@RequestBody CamaRecuperacion cama){
+        return servicio.crear(cama);
+    }
+    
+    @PutMapping("/CamaRecup/Actualizar")
+    public boolean actualizarCama(@RequestBody CamaRecuperacion cama){
         return servicio.actualizar(cama);
     }
 }
