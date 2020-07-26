@@ -29,4 +29,14 @@ public class SalaRecuperacionController{
         return servicio.obtenerSalas();
     }
 
+    @GetMapping("/SalasRecup/Disponibles")
+    public List<SalaRecuperacion> salasConCamas(){
+        return servicio.obtenerSalasConCamas();
+    }
+
+    @PutMapping("SalasRecup/Actualizar")
+    public boolean actualizarSala(@RequestBody SalaRecuperacion sala){
+        return servicio.actualizar(sala);
+    }
+
 }

@@ -18,6 +18,9 @@ public class SalaRecuperacion{
     @Column(name="camas")
     private int camas;
 
+    @Column(name="disponibles")
+    private int disponibles;
+
     /*@Column(name="especialidad")
     private String especialidad;*/
 
@@ -45,6 +48,14 @@ public class SalaRecuperacion{
 
     public void setCamas(int camas){
         this.camas = camas;
+    }
+
+    public int getDisponibles(){
+        return this.disponibles;
+    }
+
+    public void setDisponibles(int disponibles){
+        this.disponibles = disponibles;
     }
 
     /*public String getEsp(){

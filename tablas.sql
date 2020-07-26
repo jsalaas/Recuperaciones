@@ -2,6 +2,7 @@
 CREATE TABLE public.salarecuperacion(
     id_sala serial not null,
     camas int not null,
+    disponibles int not null,
     --especialidad int not null,
     primary key (id_sala)
 );

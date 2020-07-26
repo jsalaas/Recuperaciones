@@ -16,6 +16,19 @@ public class SalaRecuperacionService{
     @Autowired
     SalaRecuperacionRepo repositorio;
 
+    public boolean actualizar(SalaRecuperacion sala){
+        try{
+            repositorio.save(sala);
+            return true;
+        } catch(Exception e){
+            return false;
+        }
+    }
+
+    public List<SalaRecuperacion> obtenerSalasConCamas(){
+        return repositorio.findByDisponiblesGreaterThan(0);
+    }
+
     public List<SalaRecuperacion> obtenerSalas(){
         return repositorio.findAll();
     }
