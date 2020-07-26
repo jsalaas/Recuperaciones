@@ -26,7 +26,7 @@ public class SalaRecuperacionService{
     }
 
     public List<SalaRecuperacion> obtenerSalasConCamas(){
-        return repositorio.findByDisponiblesGreaterThan(0);
+        return repositorio.findSalasCamasDisponibles();
     }
 
     public List<SalaRecuperacion> obtenerSalas(){
