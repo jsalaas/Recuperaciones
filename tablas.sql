@@ -15,3 +15,11 @@ CREATE TABLE public.camarecuperacion(
     primary key (id_cama),
     FOREIGN key (id_sala) references salarecuperacion(id_sala)
 );
+
+CREATE TABLE public.equipamiento(
+    id_equipo serial not null,
+    nombre varchar(50),
+    id_sala integer not null,
+    primary key (id_equipo),
+    FOREIGN key (id_sala) references salarecuperacion(id_sala)
+);
