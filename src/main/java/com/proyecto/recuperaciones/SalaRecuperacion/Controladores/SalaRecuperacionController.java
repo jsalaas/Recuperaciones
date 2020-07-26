@@ -34,7 +34,7 @@ public class SalaRecuperacionController{
         return servicio.obtenerSalasConCamas();
     }
 
-    @PutMapping("SalasRecup/Actualizar")
+    @PutMapping("/SalasRecup/Actualizar")
     public boolean actualizarSala(@RequestBody SalaRecuperacion sala){
         return servicio.actualizar(sala);
     }
