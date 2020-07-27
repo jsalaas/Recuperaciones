@@ -19,11 +19,11 @@ public class CamaRecuperacion{
     @Column(name="id_sala")
     private long idSala;
 
-    @Column(name="disponible")
-    private boolean disponible;
+    @Column(name="disponible", columnDefinition = "boolean default true")
+    private boolean disponible = true;
 
     @Column(name="id_paciente")
-    private long idPaciente;
+    private Integer idPaciente;
 
     @Column(name="fechauso")
     private Date fecha;
@@ -32,7 +32,7 @@ public class CamaRecuperacion{
 
     }
 
-    public CamaRecuperacion(long id, long idSala, boolean disponible, long idPaciente, Date fecha) {
+    public CamaRecuperacion(long id, long idSala, boolean disponible, Integer idPaciente, Date fecha) {
         this.id = id;
         this.idSala = idSala;
         this.disponible = disponible;
@@ -49,31 +49,31 @@ public class CamaRecuperacion{
     }
 
     public long getIdSala(){
-        return this.idSala;
+        return idSala;
     }
 
     public void setIdSala(long idSala){
         this.idSala = idSala;
     }
 
-    public boolean getDisp(){
-        return this.disponible;
+    public boolean getDisponible(){
+        return disponible;
     }
 
-    public void setDisp(boolean disponible){
+    public void setDisponible(boolean disponible){
         this.disponible= disponible;
     }
 
-    public long getIdPaciente(){
-        return this.idPaciente;
+    public Integer getIdPaciente(){
+        return idPaciente;
     }
 
-    public void setIdPaciente(long idPaciente){
+    public void setIdPaciente(Integer idPaciente){
         this.idPaciente = idPaciente;
     }
 
     public Date getFechaUso(){
-        return this.fecha;
+        return fecha;
     }
 
     public void setFechaUso(Date fecha){

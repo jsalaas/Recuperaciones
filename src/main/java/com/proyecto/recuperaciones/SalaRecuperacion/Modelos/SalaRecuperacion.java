@@ -11,9 +11,9 @@ import javax.persistence.Table;
 @Table(name="salarecuperacion")
 public class SalaRecuperacion{
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="id_sala")
     private long id;
-
 
     @Column(name="camas")
     private int camas;
@@ -21,17 +21,13 @@ public class SalaRecuperacion{
     @Column(name="disponibles")
     private int disponibles;
 
-    /*@Column(name="especialidad")
-    private String especialidad;*/
-
     public SalaRecuperacion(){
 
     }
 
-    public SalaRecuperacion(long id, int camas/*, String especialidad*/) {
+    public SalaRecuperacion(long id, int camas) {
         this.id = id;
         this.camas = camas;
-        /*this.especialidad = especialidad;*/
     }
 
     public long getId(){
@@ -57,12 +53,4 @@ public class SalaRecuperacion{
     public void setDisponibles(int disponibles){
         this.disponibles = disponibles;
     }
-
-    /*public String getEsp(){
-        return this.especialidad;
-    }
-
-    public void setEsp(String especialidad){
-        this.especialidad = especialidad;
-    }*/
 }
