@@ -41,4 +41,8 @@ public class CamaRecuperacionService{
     public List<CamaRecuperacion> obtenerCamas(long sala, boolean disponibilidad){
         return repositorio.findByIdSalaAndDisponible(sala, disponibilidad);
     }
+
+    public Optional<CamaRecuperacion> obtenerCamaPaciente(Integer idPaciente){
+        return repositorio.findByIdPaciente(idPaciente);
+    }
 }

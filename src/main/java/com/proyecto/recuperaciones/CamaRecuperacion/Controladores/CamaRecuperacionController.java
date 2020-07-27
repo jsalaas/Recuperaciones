@@ -1,6 +1,7 @@
 package com.proyecto.recuperaciones.CamaRecuperacion.Controladores;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.proyecto.recuperaciones.CamaRecuperacion.Modelos.CamaRecuperacion;
 import com.proyecto.recuperaciones.CamaRecuperacion.Servicio.CamaRecuperacionService;
@@ -42,5 +43,10 @@ public class CamaRecuperacionController{
     @PutMapping("/CamaRecup/Actualizar")
     public boolean actualizarCama(@RequestBody CamaRecuperacion cama){
         return servicio.actualizar(cama);
+    }
+
+    @GetMapping("/CamaRecup/Paciente")
+    public Optional <CamaRecuperacion> camaPaciente(@RequestParam(name = "idpaciente") Integer idPaciente){
+        return servicio.obtenerCamaPaciente(idPaciente);
     }
 }
