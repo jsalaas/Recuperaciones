@@ -25,6 +25,9 @@ public class CamaRecuperacion{
     @Column(name="id_paciente")
     private Integer idPaciente;
 
+    @Column(name="id_perMedico")
+    private Integer idPerMedico;
+
     @Column(name="fechauso")
     private Date fecha;
 
@@ -32,11 +35,12 @@ public class CamaRecuperacion{
 
     }
 
-    public CamaRecuperacion(long id, long idSala, boolean disponible, Integer idPaciente, Date fecha) {
+    public CamaRecuperacion(long id, long idSala, boolean disponible, Integer idPaciente, Integer idPerMedico, Date fecha) {
         this.id = id;
         this.idSala = idSala;
         this.disponible = disponible;
         this.idPaciente = idPaciente;
+        this,idPerMedico = idPerMedico;
         this.fecha = fecha;
     }
 
@@ -70,6 +74,14 @@ public class CamaRecuperacion{
 
     public void setIdPaciente(Integer idPaciente){
         this.idPaciente = idPaciente;
+    }
+
+    public void getIdPerMedico(){
+        return idPerMedico;
+    }
+
+    public void setIdPerMedico(Integer idPerMedico){
+        this.idPerMedico = idPerMedico
     }
 
     public Date getFechaUso(){
